@@ -38,5 +38,5 @@ Im Code findet ihr noch Kommentierungen. Der toggle switch ist ganz simpel ohne 
     }
 
     input {
-    display: none;
+        display: none;
     }
