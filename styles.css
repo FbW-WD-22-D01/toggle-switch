@@ -1,0 +1,42 @@
+/* Label ist  der Hintergrund wo sich der Schalter drauf bewegt */
+label {
+    /* relatve weil wir den Schalter absolute machen und er einen relatives Elternelement braucht */
+    position: relative;
+    
+    /* Das label Element ist ein inline Element, kennt daher keine Breite und Höhe, da wir aber eine Breite und Höhe brauchen, verändern wir es zu inline-block */
+    display: inline-block;
+    
+    /* Die Größe, Farbe und Aussehen des Elements */
+    width: 40px;
+    height: 20px;
+    background-color: gray;
+    border-radius: 20px;
+}
+
+/* Der Schalter selbst wird über ::before (oder ::after gebaut) */
+label::before {
+    /* Da es nur ein Kreis ist, brauchen wir kein Text */
+    content: "";
+
+    /* Wir wollen den Schalter ganz links an den Anfang stellen  */
+    position: absolute;
+    width: 18px;
+    height: 18px;
+
+    /* Styling vom Schalter */
+    border-radius: 50%;
+    background-color: white;
+    top: 1px;
+    left: 1px;
+}
+
+/* Wenn das input Feld angeklickt wird soll der Schalter nach links rutschen */
+input:checked + label::before {
+    left: 20px;
+}
+
+/* das input Feld ausschalten */
+input {
+    /* display: none; */
+}
+
